@@ -73,4 +73,6 @@ pip3 install pandas
 pip3 install polars
 pip3 install parquet
 pip3 install visidata
+export PATH="/home/${name}/.local/bin:$PATH"
+
 
