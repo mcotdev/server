@@ -67,4 +67,10 @@ cd /home/${name}/data
 mkdir podman
 cd /home/${name}/data/podman
 
+# Install duckdb
+pip3 install duckdb==0.7.1
+pip3 install pandas
+pip3 install polars
+pip3 install parquet
+pip3 install visidata
 
