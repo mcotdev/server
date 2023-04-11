@@ -1,9 +1,12 @@
 #!/bin/bash
+name="bob"
+# echo "My name is ${name}" 
+
 # Python
 sudo apt install python3 python3-pip
 
 # Install various help programs
-sudo apt install git mc fzf micro neovim
+sudo apt install git mc fzf micro neovim 
 
 # Go 
 # Get the architecture of the current system
@@ -49,4 +52,16 @@ echo "Go $VERSION has been installed successfully!"
 
 # Rust
 curl https://sh.rustup.rs -sSf | sh
+
+# Podman
+cd /etc/containers/
+echo -e '[engine]\ncgroup_manager = "cgroupfs"' | sudo tee containers.conf
+cd /etc/containers/registries.conf.d/
+echo "unqualified-search-registries = ['docker.io']" | sudo tee 00-unqualified-search-registries.conf
+
+# Create a few directories
+mkdir /home/${name}/data
+cd /home/${name}/data
+mkdir podman
+
 
