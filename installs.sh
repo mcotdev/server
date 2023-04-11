@@ -52,8 +52,10 @@ echo "Go $VERSION has been installed successfully!"
 
 # Rust
 curl https://sh.rustup.rs -sSf | sh
+source "$HOME/.cargo/env"
 
 # Podman
+sudo apt install podman
 cd /etc/containers/
 echo -e '[engine]\ncgroup_manager = "cgroupfs"' | sudo tee containers.conf
 cd /etc/containers/registries.conf.d/
@@ -63,5 +65,6 @@ echo "unqualified-search-registries = ['docker.io']" | sudo tee 00-unqualified-s
 mkdir /home/${name}/data
 cd /home/${name}/data
 mkdir podman
+cd /home/${name}/data/podman
 
 
